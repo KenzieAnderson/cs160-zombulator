@@ -2,14 +2,16 @@
 
 var zombieX = 50;
 var zombie2X = 100;
+var zombieColor;
 
 function setup() {
 	createCanvas(800,800);
+	zombieColor = color(255,176,75);
 }
 
 function draw() {
 	background(255,255,255)
-	fill(255,0,0);
+	fill(zombieColor); 
 	strokeWeight(3);
 	stroke(255,0,0);
 	ellipse(zombieX, 50, 80, 80);
@@ -21,9 +23,8 @@ function draw() {
 	zombie2X = zombie2X + 3; 
 	if (zombieX >= 800) {
 		zombieX =0;
+		zombieColor = color(random(255), random(255), random(255));
 	}
-	if (zombie2X >= 800) {
-		zombie2X =0;
-	}
+
 
 }
