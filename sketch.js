@@ -8,9 +8,9 @@ var zombieSize = 80;
 var zombieColor; 
 var backgroundColor; 
 var humanY= 90;
-var humanV = 0;
-var humanA = 0.2;
-var humanDamping = -0.4; 
+var humanV = 1;
+var humanA = 0.4;
+var humanDamping = -0.9; 
 var humanSize = 120; 
 var humanColor; 
 
