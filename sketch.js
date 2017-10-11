@@ -1,46 +1,72 @@
 //Zombulator by Kenzie Anderson 
 
-var zombieY= 100;
+var zombieY = 100;
 var zombieV = 0;
 var zombieA = 0.2;
-var zombieDamping = -0.8; 
-var zombieSize = 80; 
-var zombieColor; 
-var backgroundColor; 
-var humanY= 90;
-var humanV = 1;
-var humanA = 0.4;
-var humanDamping = -0.9; 
-var humanSize = 120; 
-var humanColor; 
+var zombieDamping = -0.5;
+var zombieSize = 80;
+var zombieColor;
+
+var humanY = 100;
+var humanV = 0;
+var humanA = 0.6;
+var humanDamping = -0.8;
+var humanSize = 80;
+var humanColor;
+
+var backgroundColor;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
-	backgroundColor = color(6,88,219); 
-	zombieColor = color(255,176,75);
-	humanColor = color(166,71,232); 
+  createCanvas(windowWidth, windowHeight);
+  backgroundColor = color(114, 168, 255);
+  zombieColor = color(242, 255, 0);
+  humanColor = color(random(200, 255), random(200, 255), random(200, 255));
 }
 
 function draw() {
-	background(backgroundColor);
-	fill(zombieColor); 
-	stroke(255,0,0);
-	ellipse(windowWidth / 2,zombieY,zombieSize,zombieSize);
-	fill(humanColor); 
-	stroke(0,0,255);
-	ellipse(windowWidth / 4,humanY,humanSize,humanSize);
-	zombieY += zombieV;
-	zombieV += zombieA; 
-		if (zombieY + (zombieSize /2) >= windowHeight){
-		zombieY = windowHeight - (zombieSize / 2);
-		zombieV *= zombieDamping;
-		}
-	humanY += humanV; 
-	humanV += humanA; 
-		if (humanY + (humanSize / 4) >= windowHeight){
-		humanY = windowHeight - (humanSize / 4); 
-		humanV *= humanDamping;
-		}
-	
+  background(backgroundColor);
+  noStroke();
+
+drawZombie();
+moveZombie();
+drawHuman();
+moveHuman(); 
 
 }
+
+function drawZombie (){
+	 fill(zombieColor);
+  ellipse(windowWidth / 2, zombieY, zombieSize, zombieSize);
+}
+
+function moveZombie (){
+  zombieY += zombieV;
+  zombieV += zombieA;
+  if (zombieY + (zombieSize / 2) >= windowHeight) {
+    zombieY = windowHeight - (zombieSize / 2);
+    zombieV *= zombieDamping;
+}
+}
+
+function drawHuman() {
+	fill(humanColor);
+  ellipse(windowWidth / 4, humanY, humanSize, humanSize);
+  fill(0);
+  text("human", windowWidth / 4, humanY);
+}
+
+function moveHuman(){
+	humanY += humanV;
+  humanV += humanA;
+  if (humanY + (humanSize / 2) >= windowHeight) {
+    humanY = windowHeight - (humanSize / 2);
+    humanV *= humanDamping;
+  }
+}
+
+
+
+
+
+
+
