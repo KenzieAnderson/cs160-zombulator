@@ -2,10 +2,10 @@
 
 var backgroundColor;
 
-const MIN_SIZE = 25; // old browser? change to var.
-const MAX_SIZE = 500;
-const NUMBER_OF_ZOMBIES = 10;
-const NUMBER_OF_HUMANS = 10;
+const MIN_SIZE = 5;
+const MAX_SIZE = 50;
+const NUMBER_OF_ZOMBIES = 100;
+const NUMBER_OF_HUMANS = 100;
 
 var zombieXs;
 var zombieYs;
@@ -37,11 +37,15 @@ function initializeZombies() {
   zombieSizes = [];
   zombieColors = [];
   for (var i = 0; i < NUMBER_OF_ZOMBIES; ++i) {
-    zombieXs[i] = random(0, windowWidth);
-    zombieYs[i] = random(0, 200);
-    zombieSizes[i] = random(MIN_SIZE, MAX_SIZE);
-    zombieColors[i] = color(random(200, 255), random(50, 100), random(50, 100), 150);
+    initializeZombie(i);
   }
+}
+
+function initializeZombie(index) {
+  zombieXs[index] = random(0, windowWidth);
+  zombieYs[index] = random(0, 200);
+  zombieSizes[index] = random(MIN_SIZE, MAX_SIZE);
+  zombieColors[index] = color(random(100, 255), random(50, 150), random(50, 150), 150);
 }
 
 function initializeHumans() {
@@ -49,23 +53,41 @@ function initializeHumans() {
   humanYs = [];
   humanSizes = [];
   humanColors = [];
-  for (var i = 0; i < NUMBER_OF_HUMANS; ++i){
-    humanXs[i] = random(0, windowWidth);
-    humanYs[i] = random(windowHeight - 200, windowHeight);
-    humanSizes[i] = random(MIN_SIZE, MAX_SIZE);
-    humanColors[i] = color(random(50, 255), random(50, 255), random(50, 255), 150);
- }
-}
-function drawZombies() {
-  for (var i = 0; i < NUMBER_OF_ZOMBIES; ++i) {
-    fill(zombieColors[i]);
-    ellipse(zombieXs[i], zombieYs[i], zombieSizes[i], zombieSizes[i]);
+  for (var i = 0; i < NUMBER_OF_HUMANS; ++i) {
+    initializeHuman(i);
   }
 }
 
-function drawHumans() {
-  for (var i = 0; i < NUMBER_OF_HUMANS; ++i){
-    fill(humanColors[i]);
-    ellipse(humanXs[i], humanYs[i], humanSizes[i], humanSizes[i]);
- }
+function initializeHuman(index) {
+  humanXs[index] = random(0, windowWidth);
+  humanYs[index] = random(windowHeight - 200, windowHeight);
+  humanSizes[index] = random(MIN_SIZE, MAX_SIZE);
+  humanColors[index] = color(random(50, 150), random(50, 150), random(150, 255), 150);
 }
+
+function drawZombies() {
+  for (var i = 0; i < NUMBER_OF_ZOMBIES; ++i) {
+    drawZombie(i);
+  }
+}
+
+function drawZombie(index) {
+  fill(zombieColors[index]);
+  ellipse(zombieXs[index], zombieYs[index], zombieSizes[index], zombieSizes[index]);
+}
+
+function drawHumans() {
+  for (var i = 0; i < NUMBER_OF_HUMANS; ++i) {
+    drawHuman(i);
+  }
+}
+
+function drawHuman(index) {
+  fill(humanColors[index]);
+    ellipse(humanXs[index], humanYs[index], humanSizes[index], humanSizes[index]);
+}
+
+
+
+
+
