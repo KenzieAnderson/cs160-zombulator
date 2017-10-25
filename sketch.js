@@ -19,6 +19,7 @@ function draw() {
   background(backgroundColor);
   noStroke();
   drawZombies();
+  moveZombies();
   drawHumans();
   moveHumans();
 }
@@ -52,6 +53,16 @@ function drawZombie(zombie) {
   ellipse(zombie.x, zombie.y, zombie.size, zombie.size);
 }
 
+function moveZombies() {
+  for (var i = 0; i < NUMBER_OF_ZOMBIES; ++i){
+    moveZombie(zombies[i]);
+  }
+}
+
+function moveZombie(zombie) {
+  zombie.y += random(1);
+  zombie.x += random(-1, 1);
+}
 
 function initializeHumans() {
   humans = [];
