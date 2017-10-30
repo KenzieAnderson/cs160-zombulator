@@ -1,6 +1,6 @@
 var backgroundColor;
 
-const MIN_SIZE = 5;
+const MIN_SIZE = 6;
 const MAX_SIZE = 50;
 const NUMBER_OF_ZOMBIES = 100;
 const NUMBER_OF_HUMANS = 100;
