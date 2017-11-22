@@ -1,6 +1,6 @@
 var backgroundColor;
 
-const MIN_SIZE = 10;
+const MIN_SIZE = 0;
 const MAX_SIZE = 50;
 const POPULATION_SIZE = 500;
 
@@ -30,7 +30,7 @@ function handleCollisions() {
     for (var j = i + 1; j < POPULATION_SIZE; ++j) {
       var target = population[j]; 
       if (attacker.isTouching(target)) {
-       Destroy(target);
+      print:("Fight!Fight!Fight!");
       }
     }
   }
