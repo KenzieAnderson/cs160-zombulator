@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(backbroundColor);
+  background(backgroundColor);
   noStroke();
   drawPopulation();
   movePopulation();
