@@ -11,7 +11,7 @@ var humanCount = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  backgroundColor = (background-image: url("IMG_2019.jpg")); 
+  backgroundColor = color(249, 196, 4); 
   initializePopulation();
 }
 
