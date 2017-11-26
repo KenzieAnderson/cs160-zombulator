@@ -1,4 +1,4 @@
-var backgroundColor;
+var background-image;
 
 const MIN_SIZE = 10;
 const MAX_SIZE = 50;
@@ -11,12 +11,12 @@ var humanCount = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  backgroundColor = color(120, 240, 245);
+  background-image: url("IMG_2019.jpg");
   initializePopulation();
 }
 
 function draw() {
-  background(backgroundColor);
+  background(backbround-image);
   noStroke();
   drawPopulation();
   movePopulation();
@@ -76,7 +76,7 @@ function initializeZombie() {
     y: random(0, 200),
     speed: random(1, 3),
     size: random(MIN_SIZE, MAX_SIZE),
-    color: color(random(200, 255), random(40, 100), random(175, 200), 150),
+    color: color(random(49, 188), random(70, 190), random(150, 200), 220),
     move: function() {
       var direction = random(0, 100);
       if (direction < 20) {
