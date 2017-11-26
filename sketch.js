@@ -74,7 +74,7 @@ function initializeZombie() {
     humanoidType: "zombie",
     x: random(0, windowWidth),
     y: random(0, 200),
-    speed: random(1, 3),
+    speed: random(2, 6),
     size: random(MIN_SIZE, MAX_SIZE),
     color: color(random(49, 188), random(70, 190), random(150, 200), 220),
     move: function() {
@@ -108,7 +108,7 @@ function initializeHuman() {
     y: random(windowHeight - 200, windowHeight),
     speed: random(0.5, 5),
     size: random(MIN_SIZE, MAX_SIZE),
-    color: color(random(50, 150), random(50, 150), random(150, 255), 150),
+    color: color(random(200, 255), random(150, 200), random(150, 255), 255),
     move: function() {
         var direction = random(0, 100);
         if (direction < 20) {
