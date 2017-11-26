@@ -1,6 +1,6 @@
 var backgroundColor;
 
-const MIN_SIZE = 0;
+const MIN_SIZE = 10;
 const MAX_SIZE = 50;
 const POPULATION_SIZE = 500;
 
@@ -11,7 +11,7 @@ var humanCount = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  backgroundColor = color(245, 255, 245);
+  backgroundColor = color(120, 240, 245);
   initializePopulation();
 }
 
@@ -30,7 +30,7 @@ function handleCollisions() {
     for (var j = i + 1; j < POPULATION_SIZE; ++j) {
       var target = population[j]; 
       if (attacker.isTouching(target)) {
-      print:("Fight!Fight!Fight!");
+      print("Fight!Fight!Fight!");
       }
     }
   }
@@ -50,8 +50,8 @@ function initializePopulation() {
 }
 
 function drawPopulationCounts() {
-  stroke(0);
-  textSize(72);
+  stroke(5em);
+  textSize(50);
   textAlign(CENTER);
   text("Zombies: " + zombieCount, width / 2, 100);
   text("Humans: " + humanCount, width / 2, height - 100);
@@ -74,9 +74,9 @@ function initializeZombie() {
     humanoidType: "zombie",
     x: random(0, windowWidth),
     y: random(0, 200),
-    speed: random(0.25, 3),
+    speed: random(1, 3),
     size: random(MIN_SIZE, MAX_SIZE),
-    color: color(random(100, 255), random(50, 150), random(50, 150), 150),
+    color: color(random(200, 255), random(40, 100), random(175, 200), 150),
     move: function() {
       var direction = random(0, 100);
       if (direction < 20) {
@@ -106,7 +106,7 @@ function initializeHuman() {
     humanoidType: "human",
     x: random(0, windowWidth),
     y: random(windowHeight - 200, windowHeight),
-    speed: random(0.25, 3),
+    speed: random(0.5, 5),
     size: random(MIN_SIZE, MAX_SIZE),
     color: color(random(50, 150), random(50, 150), random(150, 255), 150),
     move: function() {
