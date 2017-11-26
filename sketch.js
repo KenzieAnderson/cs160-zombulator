@@ -1,4 +1,4 @@
-var background-image;
+var backgroundColor;
 
 const MIN_SIZE = 10;
 const MAX_SIZE = 50;
@@ -11,12 +11,12 @@ var humanCount = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background-image: url("IMG_2019.jpg");
+  backgroundColor = (background-image: url("IMG_2019.jpg")); 
   initializePopulation();
 }
 
 function draw() {
-  background(backbround-image);
+  background(backbroundColor);
   noStroke();
   drawPopulation();
   movePopulation();
