@@ -52,7 +52,7 @@ function initializePopulation() {
 function drawPopulationCounts() {
   stroke(0);
   textSize(50);
-  textAlign(CENTER);
+  textAlign(left);
   text("Zombies: " + zombieCount, width / 2, 100);
   text("Humans: " + humanCount, width / 2, height - 100);
 }
